@@ -1,0 +1,80 @@
+[
+    {
+        "id": 0,
+        "nom": "audi R8",
+        "image": "r8.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Disponible"
+    },
+    {
+        "id": 2,
+        "nom": "SUV",
+        "image": "4x4blanc.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Disponible"
+    },
+    {
+        "id": 3,
+        "nom": "BMW",
+        "image": "voitureblanche.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Louée"
+    },
+    {
+        "id": 4,
+        "nom": "Porshe",
+        "image": "porshe.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Disponible"
+    },
+    {
+        "id": 5,
+        "nom": "Mercedes",
+        "image": "berlineblanche.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Louée"
+    },
+    {
+        "id": 6,
+        "nom": "Mercedes",
+        "image": "berlineblanche.jpg",
+        "km": 50000,
+        "couleur": "noir",
+        "carburant": "gazole",
+        "année": "2009",
+        "boiteVitesse": "manuelle",
+        "cvFiscaux": "4cv",
+        "nbPortes": "5",
+        "location": "Disponible"
+    }
+]
