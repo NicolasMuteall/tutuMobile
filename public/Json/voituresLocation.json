@@ -10,7 +10,8 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Disponible"
+        "location": "Disponible",
+        "rdv": false
     },
     {
         "id": 2,
@@ -23,7 +24,8 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Disponible"
+        "location": "Disponible",
+        "rdv": false
     },
     {
         "id": 3,
@@ -36,7 +38,8 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Louée"
+        "location": "Louée",
+        "rdv": false
     },
     {
         "id": 4,
@@ -49,7 +52,8 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Disponible"
+        "location": "Disponible",
+        "rdv": false
     },
     {
         "id": 5,
@@ -62,7 +66,8 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Louée"
+        "location": "Louée",
+        "rdv": false
     },
     {
         "id": 6,
@@ -75,6 +80,7 @@
         "boiteVitesse": "manuelle",
         "cvFiscaux": "4cv",
         "nbPortes": "5",
-        "location": "Disponible"
+        "location": "Disponible",
+        "rdv": false
     }
 ]

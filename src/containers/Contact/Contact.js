@@ -45,6 +45,15 @@ const Contact = (props) => {
                             </span>
                         }
                     </div>
+                    <div className="mb-3">
+                        <label htmlFor="object" className="form-label">Objet du message:</label>
+                        <input type="text" className="form-control" id="object" name='objet' onChange={props.handleChange} value={props.values.objet} />
+                        {props.errors.objet &&
+                            <span style={{ color: 'red' }}>
+                                {props.errors.objet}
+                            </span>
+                        }
+                    </div>
                     <div className="input-group mt-3">
                         <label htmlFor="message" className="input-group-text">Message</label>
                         <textarea className="form-control" aria-label="With textarea"
@@ -73,7 +82,8 @@ export default withFormik({
         email: "",
         message: "",
         prenom: "",
-        tel: ""
+        tel: "",
+        objet: ""
     }),
     validationSchema: Yup.object().shape({
         nom: Yup.string()
@@ -88,13 +98,17 @@ export default withFormik({
         tel: Yup.string()
             .matches(/^\d{10}$/, 'Le numéro de téléphone doit contenir 10 chiffres.')
             .required("Le numéro de téléphone est obligatoire."),
+        objet: Yup.string()
+            .min(10, "L'objet doit contenir plus de 10 caractères.")
+            .max(50, "L'objet doit faire moins de 50 caractères.")
+            .required("L'objet du message est obligatoire."),
         message: Yup.string()
-            .min(10, "Le message doit contenir plus de 10 caractères.")
+            .min(5, "Le message doit contenir plus de 5 caractères.")
             .max(500, "Le message doit faire moins de 500 caractères.")
             .required("Le message est obligatoire.")
     }),
     handleSubmit: (values) => {
-        alert('Message envoyé');
+        alert('Votre formulaire a été soumis.');
     },
     handleReset: (values) => {
         withFormik.resetForm();

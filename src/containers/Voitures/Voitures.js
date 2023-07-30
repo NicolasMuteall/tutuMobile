@@ -17,6 +17,8 @@ const Voitures = () => {
     const [chevaux, setChevaux] = useState('');
     const [porte, setPorte] = useState('');
     const [dispo, setDispo] = useState('Disponible');
+    const [rdv, setRdv] = useState(false);
+    const [id, setId] = useState('');
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
@@ -38,7 +40,7 @@ const Voitures = () => {
             .catch((error) => console.error('Erreur lors du chargement des voitures :', error));
     }, []);
 
-    const handleClickInfo = (name, image, km, couleur, carburant, annee, boite, cv, porte, dispo) => {
+    const handleClickInfo = (name, image, km, couleur, carburant, annee, boite, cv, porte, dispo, rdv, id) => {
         setModal(true);
         setNomModal(name);
         setImage(image);
@@ -49,11 +51,24 @@ const Voitures = () => {
         setBoite(boite);
         setChevaux(cv);
         setPorte(porte);
-        setDispo(dispo)
+        setDispo(dispo);
+        setRdv(rdv);
+        setId(id)
     }
 
     const closeModal = () => {
         setModal(false);
+    }
+
+    const takeRdv = (id) => {
+        if (activeLink === 'location') {
+            setVoitures((prevVoiture) =>
+                prevVoiture.map((voiture) =>
+                    voiture.id === id ? { ...voiture, rdv: !voiture.rdv } : voiture
+                )
+            );
+            setRdv(!rdv)
+        }
     }
 
     return (
@@ -69,12 +84,12 @@ const Voitures = () => {
                 {activeLink === 'location' ?
                     (voitures.map((voiture) => (
                         <div key={voiture.id}>
-                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location={voiture.location} image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location)} />
+                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location={voiture.location} image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location, voiture.rdv, voiture.id)} />
                         </div>
                     )))
                     : (voituresAchat.map((voiture) => (
                         <div key={voiture.id}>
-                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location="Disponible" image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location)} />
+                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location="Disponible" image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location, voiture.rdv, voiture.id)} />
                         </div>
                     )))}
             </section>
@@ -96,9 +111,11 @@ const Voitures = () => {
                             <span>{chevaux}</span>
                             <span>{porte}</span>
                         </div>
-                        {dispo === 'Disponible' ? (
-                            <button>test</button>
-                        ) : ''}
+                        <div className='text-center'>
+                            {dispo === 'Disponible' ? (
+                                rdv === false ? <button onClick={() => takeRdv(id)} className='btn btn-primary'>Prendre Rdv</button> : <button onClick={() => takeRdv(id)} className='btn btn-danger'>Annuler Rdv</button>
+                            ) : ''}
+                        </div>
                     </div>
                 </div>
 
