@@ -16,6 +16,7 @@ const Voitures = () => {
     const [annee, setAnnee] = useState('');
     const [chevaux, setChevaux] = useState('');
     const [porte, setPorte] = useState('');
+    const [dispo, setDispo] = useState('Disponible');
 
     const handleLinkClick = (link) => {
         setActiveLink(link);
@@ -37,7 +38,7 @@ const Voitures = () => {
             .catch((error) => console.error('Erreur lors du chargement des voitures :', error));
     }, []);
 
-    const handleClickInfo = (name, image, km, couleur, carburant, annee, boite, cv, porte) => {
+    const handleClickInfo = (name, image, km, couleur, carburant, annee, boite, cv, porte, dispo) => {
         setModal(true);
         setNomModal(name);
         setImage(image);
@@ -47,7 +48,8 @@ const Voitures = () => {
         setAnnee(annee);
         setBoite(boite);
         setChevaux(cv);
-        setPorte(porte)
+        setPorte(porte);
+        setDispo(dispo)
     }
 
     const closeModal = () => {
@@ -55,7 +57,7 @@ const Voitures = () => {
     }
 
     return (
-        <div className='voiture'>
+        <div className='voiture container'>
             <h1>Selection de voitures:</h1>
             <div className="container text-center mt-5 mb-5">
                 <ul className="navigation">
@@ -67,12 +69,12 @@ const Voitures = () => {
                 {activeLink === 'location' ?
                     (voitures.map((voiture) => (
                         <div key={voiture.id}>
-                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location={voiture.location} image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes)} />
+                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location={voiture.location} image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location)} />
                         </div>
                     )))
                     : (voituresAchat.map((voiture) => (
                         <div key={voiture.id}>
-                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location="Disponible" image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes)} />
+                            <Card nom={voiture.nom} année={voiture.année} couleur={voiture.couleur} moteur={voiture.carburant} location="Disponible" image={voiture.image} handleClickInfo={() => handleClickInfo(voiture.nom, voiture.image, voiture.km, voiture.couleur, voiture.carburant, voiture.année, voiture.boiteVitesse, voiture.cvFiscaux, voiture.nbPortes, voiture.location)} />
                         </div>
                     )))}
             </section>
@@ -94,6 +96,9 @@ const Voitures = () => {
                             <span>{chevaux}</span>
                             <span>{porte}</span>
                         </div>
+                        {dispo === 'Disponible' ? (
+                            <button>test</button>
+                        ) : ''}
                     </div>
                 </div>
 

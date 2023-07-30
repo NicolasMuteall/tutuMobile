@@ -1,0 +1,23 @@
+.accueil {
+
+    color: white;
+
+    height: 100vh;
+    background-image: url('./background.png');
+    background-size: cover;
+    /* Ajuster la taille de l'image pour couvrir tout l'écran */
+    background-position: center;
+    /* Centrer l'image horizontalement et verticalement */
+    background-repeat: no-repeat;
+    /* Empêcher la répétition de l'image */
+
+    #carouselExample {
+        border-radius: 12px;
+        width: 50%;
+        margin: auto;
+
+        img {
+            border-radius: 12px;
+        }
+    }
+}
