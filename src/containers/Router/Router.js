@@ -4,6 +4,8 @@ import Accueil from '../Accueil/Accueil';
 import Contact from '../Contact/Contact';
 import Navbar from '../../components/Navbar/Navbar';
 import Voitures from '../Voitures/Voitures';
+import AccueilAdmin from '../Admin/Containers/Accueil/Accueil';
+import UpdateAnnonce from '../Admin/Containers/Modification/UpdateAnnonce';
 
 const Router = () => {
     return (
@@ -13,6 +15,8 @@ const Router = () => {
                 <Route path='/' element={<Accueil />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path='/voitures' element={<Voitures />} />
+                <Route path='/admin/home' element={<AccueilAdmin />} />
+                <Route path='/admin/update' element={<UpdateAnnonce />} />
             </Routes>
         </div>
     );
