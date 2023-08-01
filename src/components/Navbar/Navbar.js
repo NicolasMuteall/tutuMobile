@@ -5,7 +5,7 @@ const Navbar = () => {
     const location = useLocation();
 
     // Définissez ici les chemins où vous souhaitez masquer la navbar
-    const hiddenPaths = ['/admin/home', '/admin/update'];
+    const hiddenPaths = ['/admin/home', '/admin/update', '/admin/create'];
 
     // Vérifiez si l'URL actuelle correspond à l'un des chemins où la navbar doit être masquée
     const shouldHideNavbar = hiddenPaths.includes(location.pathname);

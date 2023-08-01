@@ -1,3 +1,23 @@
 .accueilAdmin {
     margin-left: 220px;
+
+    .annonce {
+        display: flex;
+        height: 200px;
+
+        img {
+            width: 250px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .image {
+            position: relative;
+            top: -35px;
+        }
+
+        .description {
+            flex-grow: 1;
+        }
+    }
 }

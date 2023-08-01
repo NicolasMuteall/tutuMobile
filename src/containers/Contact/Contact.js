@@ -109,6 +109,7 @@ export default withFormik({
     }),
     handleSubmit: (values) => {
         alert('Votre formulaire a été soumis.');
+        console.log(values);
     },
     handleReset: (values) => {
         withFormik.resetForm();

@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Voitures from '../Voitures/Voitures';
 import AccueilAdmin from '../Admin/Containers/Accueil/Accueil';
 import UpdateAnnonce from '../Admin/Containers/Modification/UpdateAnnonce';
+import Creation from '../Admin/Containers/Creation/Creation';
 
 const Router = () => {
     return (
@@ -17,6 +18,7 @@ const Router = () => {
                 <Route path='/voitures' element={<Voitures />} />
                 <Route path='/admin/home' element={<AccueilAdmin />} />
                 <Route path='/admin/update' element={<UpdateAnnonce />} />
+                <Route path='/admin/create' element={<Creation />} />
             </Routes>
         </div>
     );

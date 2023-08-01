@@ -4,10 +4,12 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 app.use(express.json())
 app.use(cors({ origin: 'http://localhost:3000' }));
+app.use('/images', express.static(path.join(__dirname, 'assets')));
 
 app.listen(PORT, () => {
     console.log(`Le port de mon backend est le : ${PORT}`);
@@ -29,16 +31,11 @@ connection.connect((err) => {
     }
 });
 
-app.get('/users', (req, res) => {
-    // Utilisation d'une requête préparée pour sécuriser la requête
-    const sql = 'SELECT * FROM eleve';
+/*IMPORT REQUETE*/
+const annonce = require('./requetes/annonce');
+/*-----*/
 
-    connection.query(sql, (err, results) => {
-        if (err) {
-            console.error('Erreur lors de la requête :', err);
-            return res.status(500).send('Erreur lors de la requête à la base de données.');
-        }
-        // Traitez les résultats ici et renvoyez-les au client
-        res.json(results);
-    });
-});
+/*APPEL REQUETE*/
+annonce(app, connection);
+/*----------*/
+
