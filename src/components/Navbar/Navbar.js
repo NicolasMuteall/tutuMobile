@@ -4,11 +4,8 @@ import { useLocation } from 'react-router-dom';
 const Navbar = () => {
     const location = useLocation();
 
-    // Définissez ici les chemins où vous souhaitez masquer la navbar
-    const hiddenPaths = ['/admin/home', '/admin/update', '/admin/create'];
+    const shouldHideNavbar = location.pathname.includes('/admin');
 
-    // Vérifiez si l'URL actuelle correspond à l'un des chemins où la navbar doit être masquée
-    const shouldHideNavbar = hiddenPaths.includes(location.pathname);
     return (
         !shouldHideNavbar && (
             <nav className="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">

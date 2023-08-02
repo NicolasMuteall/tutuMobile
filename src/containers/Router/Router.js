@@ -4,9 +4,9 @@ import Accueil from '../Accueil/Accueil';
 import Contact from '../Contact/Contact';
 import Navbar from '../../components/Navbar/Navbar';
 import Voitures from '../Voitures/Voitures';
-import AccueilAdmin from '../Admin/Containers/Accueil/Accueil';
-import UpdateAnnonce from '../Admin/Containers/Modification/UpdateAnnonce';
-import Creation from '../Admin/Containers/Creation/Creation';
+import AccueilAdmin from '../../Admin/Containers/Accueil/Accueil';
+import UpdateAnnonce from '../../Admin/Containers/Modification/UpdateAnnonce';
+import Creation from '../../Admin/Containers/Creation/Creation';
 
 const Router = () => {
     return (
